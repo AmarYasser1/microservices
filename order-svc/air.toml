@@ -1,0 +1,24 @@
+
+[build]
+# The working directory of your Go project
+root = "."
+# Command to build your project
+cmd = "go build -o tmp/main ."
+# Binary file name after build
+bin = "tmp/main"
+# Include subdirectories for watching
+include_ext = ["go", "tpl", "html", "tmpl"]
+# Exclude watching vendor and tmp directory
+exclude_dir = ["tmp", "vendor", "node_modules"]
+# Run this command before restarting
+before_exec = "echo 'Restarting Gin API... 🚀'"
+# Delay restart after file change (in milliseconds)
+delay = 1000
+# Log level (debug, info, warn, error, fatal, panic)
+log = "debug"
+
+[serve]
+# Command to run the binary
+cmd = "./tmp/main"
+# Listen for HTTP changes
+watch_delay = 500
